@@ -21,6 +21,7 @@ namespace MauiAppOpyiatNovi.Model
             context.Users.Add(new User() { Login = "123", Password = "123" });
             context.Students.Add(new Student(a));
             context.Groups.Add(new Group() { Number = "1135", Students = new List<Student>() { new Student(a) } });
+            context.SaveChanges();
         }
         public static DB Instance { get { return instance ??= new DB(); } }
 
@@ -144,7 +145,8 @@ namespace MauiAppOpyiatNovi.Model
         }
         public async Task<List<User>> GetAllUsers()
         {
-            return await context.Users.ToListAsync();
+            var a = await context.Users.ToListAsync();
+            return a;
         }
         //-----------------------------Пользователи кончились-----------------------------\\
     }

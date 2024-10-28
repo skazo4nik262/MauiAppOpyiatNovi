@@ -13,29 +13,29 @@
                       ContentTemplate="{DataTemplate local:MainPage}"
                       Route="LoginPage"/>
 
-            <!--<ShellContent Title="Sign Up"
+            <ShellContent Title="Sign Up"
                       ContentTemplate="{DataTemplate local:SignUpPage}"
-                      Route="RegistrPage"/>-->
+                      Route="RegistrPage"/>
         </Tab>
     </TabBar>
 
-    <!--<FlyoutItem Title="Home">
+    <FlyoutItem Title="Home">
         <Tab Title="Info">
             <ShellContent Title="Students"
                       ContentTemplate="{DataTemplate local:StudentsPageView}"
                       Route="StudentsPage"/>
-            <ShellContent Title="Groups"
+            <!--<ShellContent Title="Groups"
                       ContentTemplate="{DataTemplate local:GroupsPageView}"
-                      Route="GroupsPage"/>
+                      Route="GroupsPage"/>-->
         </Tab>
         <Tab Title="DatabaseAdd">
-            <ShellContent Title="Student"
+            <!--<ShellContent Title="Student"
                       ContentTemplate="{DataTemplate local:StudentAddServicesView}"
-                      Route="StudentAddServices"/>
-            <ShellContent Title="Groups"
+                      Route="StudentAddServices"/>-->
+            <!--<ShellContent Title="Groups"
                       ContentTemplate="{DataTemplate local:GroupAddServicesView}"
-                      Route="GroupAddServices"/>
+                      Route="GroupAddServices"/>-->
         </Tab>
-    </FlyoutItem>-->
+    </FlyoutItem>
 
 </Shell>
