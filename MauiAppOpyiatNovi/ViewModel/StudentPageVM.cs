@@ -26,7 +26,9 @@ namespace MauiAppOpyiatNovi.ViewModel
         }
         public async Task AddStudentMethod()
         {
-            await Shell.Current.GoToAsync("//StudentAddServices");
+            ShellNavigationQueryParameters keyValuePairs = new ShellNavigationQueryParameters();
+            keyValuePairs.Add("Student", SelectedStudent);
+            await Shell.Current.GoToAsync("//StudentAddServices", keyValuePairs);
         }
         public async Task DeleteStudentMethod()
         {

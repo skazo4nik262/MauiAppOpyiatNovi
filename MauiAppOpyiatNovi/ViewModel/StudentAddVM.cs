@@ -7,8 +7,14 @@ using System.Threading.Tasks;
 
 namespace MauiAppOpyiatNovi.ViewModel
 {
-    public class StudentAddVM
+    [QueryProperty(nameof(Student), "Student")]
+    public class StudentAddVM:BaseVM
     {
+        private Student student = new Student();
+
+        public Student Student { get => student; set { student = value; Signal(); } }
+        public VmCommand Save { get; set; }
+
         public StudentAddVM()
         {
             Save = new VmCommand(async () =>
@@ -20,8 +26,7 @@ namespace MauiAppOpyiatNovi.ViewModel
                 Shell.Current.GoToAsync("//StudentsPage");
             });
         }
-        public Student Student { get; set; } = new Student();
-        public VmCommand Save { get; set; }
 
+        
     }
 }

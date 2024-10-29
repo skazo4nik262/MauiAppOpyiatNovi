@@ -11,7 +11,7 @@
         <Label Text="FIO"/>
         <Entry Text=""/>
         <Label Text="Birthday"/>
-        <DatePicker Date=""/>
+        <!--<DatePicker Date=""/>-->
         <Label Text="Gender"/>
         <Switch IsToggled="{Binding Student.IsBoy}"/>
         <Label Text="Address"/>
