@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MauiAppOpyiatNovi.ViewModel"
+             x:Class="MauiAppOpyiatNovi.View.StudentAddServicesPage"
+             Title="StudentAddServicesPage">
+    <ContentPage.BindingContext>
+        <local:StudentAddVM/>
+    </ContentPage.BindingContext>
+    <VerticalStackLayout>
+        <Label Text="FIO"/>
+        <Entry Text=""/>
+        <Label Text="Birthday"/>
+        <DatePicker Date=""/>
+        <Label Text="Gender"/>
+        <Switch IsToggled="{Binding Student.IsBoy}"/>
+        <Label Text="Address"/>
+        <Entry Text=""/>
+    </VerticalStackLayout>
+</ContentPage>

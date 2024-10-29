@@ -26,14 +26,14 @@ namespace MauiAppOpyiatNovi.ViewModel
 
         private async Task SignInMethod()
         {
-            Users = await DB.Instance.GetAllUsers();
-            var user = Users.FirstOrDefault(s => s.Login == User.Login && s.Password == User.Password);
-            if (user != null)
-            {
+            //Users = await DB.Instance.GetAllUsers();
+            //var user = Users.FirstOrDefault(s => s.Login == User.Login && s.Password == User.Password);
+            //if (user != null)
+            //{
                 await Shell.Current.GoToAsync("//StudentsPage");
                 Shell.Current.FlyoutBehavior = FlyoutBehavior.Flyout;
-            }
-            else await Application.Current.MainPage.DisplayAlert("Unknow User", "Wrong Login or Password", "Ok");
+            //}
+            //else await Application.Current.MainPage.DisplayAlert("Unknow User", "Wrong Login or Password", "Ok");
         }
 
         public void OnAppearing()

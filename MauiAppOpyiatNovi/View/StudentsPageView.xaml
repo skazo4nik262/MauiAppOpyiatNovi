@@ -2,11 +2,39 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAppOpyiatNovi.View.StudentsPageView"
+             xmlns:local="clr-namespace:MauiAppOpyiatNovi.ViewModel"
              Title="StudentsPageView">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ContentPage.BindingContext>
+        <local:StudentPageVM/>
+    </ContentPage.BindingContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <ListView ItemsSource="{Binding Students}" SelectedItem="{Binding SelectedStudent}" RowHeight="100">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label Text="{Binding FIO, StringFormat='FIO: {0}'}"/>
+                            <Label Text="{Binding Birthday, StringFormat='Birthday: {0}'}"/>
+                            <Label Text="{Binding Gender, StringFormat='Gender: {0}'}"/>
+                            <Label Text="{Binding Address, StringFormat='Address: {0}'}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Text="Add" Grid.Column="0" Command="{Binding AddStudent}"/>
+            <Button Text="Edit" Grid.Column="1" Command="{Binding EditStudent}"/>
+            <Button Text="Delete" Grid.Column="2" Command="{Binding DeleteStudent}"/>
+        </Grid>
+    </Grid>
 </ContentPage>
