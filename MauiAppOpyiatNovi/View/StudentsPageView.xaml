@@ -32,8 +32,8 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button Text="Add" Grid.Column="0" Command="{Binding AddStudent}"/>
-            <Button Text="Edit" Grid.Column="1" Command="{Binding EditStudent}"/>
+            <Button Text="Add/Edit" Grid.Column="0" Command="{Binding AddEditStudent}"/>
+            <!--<Button Text="Edit" Grid.Column="1" Command="{Binding AddEditStudent}"/>-->
             <Button Text="Delete" Grid.Column="2" Command="{Binding DeleteStudent}"/>
         </Grid>
     </Grid>

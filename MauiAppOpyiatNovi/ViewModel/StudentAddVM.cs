@@ -8,25 +8,43 @@ using System.Threading.Tasks;
 namespace MauiAppOpyiatNovi.ViewModel
 {
     [QueryProperty(nameof(Student), "Student")]
-    public class StudentAddVM:BaseVM
+    public class StudentAddVM : BaseVM
     {
-        private Student student = new Student();
+        private Student student;
 
-        public Student Student { get => student; set { student = value; Signal(); } }
+        public Student Student
+        {
+            get => student;
+            set
+            {
+                student = value;
+                Signal();
+            }
+        }
         public VmCommand Save { get; set; }
 
         public StudentAddVM()
         {
             Save = new VmCommand(async () =>
             {
-                if (Student.Id == 0)
-                    await DB.Instance.AddStudent(Student);
-                else
-                    await DB.Instance.EditStudent(Student);
-                Shell.Current.GoToAsync("//StudentsPage");
+                await NewMethod();
             });
         }
 
-        
+        private async Task NewMethod()
+        {
+            if (Student.Id != 0)
+                await DB.Instance.EditStudent(Student);
+            else
+            {
+                if (Student.Birthday != null)
+                {
+                    await DB.Instance.AddStudent(Student);
+                }
+                else Application.Current.MainPage.DisplayAlert("e", "e", "e");
+            }
+
+            Shell.Current.GoToAsync("//StudentsPage");
+        }
     }
 }

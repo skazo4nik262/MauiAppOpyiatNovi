@@ -22,6 +22,7 @@ namespace MauiAppOpyiatNovi.Model
             context.Students.Add(new Student(a));
             context.Groups.Add(new Group() { Number = "1135", Students = new List<Student>() { new Student(a) } });
             context.SaveChanges();
+            var b =context.Students.ToList();
         }
         public static DB Instance { get { return instance ??= new DB(); } }
 
@@ -29,10 +30,11 @@ namespace MauiAppOpyiatNovi.Model
         public async Task<bool> AddStudent(Student student)
         {
             var localStudent = new Student(student);
+            localStudent.GroupId = 1;
             if (localStudent != null)
             {
                 await context.Students.AddAsync(localStudent);
-                context.SaveChangesAsync();
+                await context.SaveChangesAsync();
                 return true;
             }
             else return false;
@@ -43,7 +45,7 @@ namespace MauiAppOpyiatNovi.Model
             if (localStudent != null)
             {
                 context.Students.Remove(localStudent);
-                await context.SaveChangesAsync();
+                context.SaveChanges();
                 return true;
             }
             else return false;
@@ -54,7 +56,7 @@ namespace MauiAppOpyiatNovi.Model
             if (localStudent != null)
             {
                 context.Entry(localStudent).CurrentValues.SetValues(student);
-                await context.SaveChangesAsync();
+                context.SaveChanges();
                 return true;
             }
             else return false;
@@ -74,7 +76,7 @@ namespace MauiAppOpyiatNovi.Model
             if (localGroup != null)
             {
                 await context.Groups.AddAsync(localGroup);
-                context.SaveChangesAsync();
+                context.SaveChanges();
                 return true;
             }
             else return false;
@@ -85,7 +87,7 @@ namespace MauiAppOpyiatNovi.Model
             if (localGroup != null)
             {
                 context.Groups.Remove(localGroup);
-                await context.SaveChangesAsync();
+                context.SaveChanges();
                 return true;
             }
             else return false;
@@ -96,7 +98,7 @@ namespace MauiAppOpyiatNovi.Model
             if (localGroup != null)
             {
                 context.Entry(localGroup).CurrentValues.SetValues(group);
-                await context.SaveChangesAsync();
+                context.SaveChanges();
                 return true;
             }
             else return false;
@@ -116,7 +118,7 @@ namespace MauiAppOpyiatNovi.Model
             if (localUser != null)
             {
                 await context.Users.AddAsync(localUser);
-                context.SaveChangesAsync();
+                context.SaveChanges();
                 return true;
             }
             else return false;
@@ -127,7 +129,7 @@ namespace MauiAppOpyiatNovi.Model
             if (localUser != null)
             {
                 context.Users.Remove(localUser);
-                await context.SaveChangesAsync();
+                context.SaveChanges();
                 return true;
             }
             else return false;
@@ -138,7 +140,7 @@ namespace MauiAppOpyiatNovi.Model
             if (localUser != null)
             {
                 context.Entry(localUser).CurrentValues.SetValues(user);
-                await context.SaveChangesAsync();
+                context.SaveChanges();
                 return true;
             }
             else return false;

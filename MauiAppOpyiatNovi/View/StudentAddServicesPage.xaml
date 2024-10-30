@@ -9,12 +9,13 @@
     </ContentPage.BindingContext>
     <VerticalStackLayout>
         <Label Text="FIO"/>
-        <Entry Text=""/>
+        <Entry Text="{Binding Student.FIO}"/>
         <Label Text="Birthday"/>
-        <!--<DatePicker Date=""/>-->
+        <DatePicker Date="{Binding Student.Birthday}"/>
         <Label Text="Gender"/>
         <Switch IsToggled="{Binding Student.IsBoy}"/>
         <Label Text="Address"/>
-        <Entry Text=""/>
+        <Entry Text="{Binding Student.Address}"/>
+        <Button Command="{Binding Save}" Text="Save"/>
     </VerticalStackLayout>
 </ContentPage>
