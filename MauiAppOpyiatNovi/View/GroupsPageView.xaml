@@ -18,13 +18,13 @@
                     <ViewCell>
                         <StackLayout>
                             <Label Text="{Binding Number, StringFormat='Number: {0}'}"/>
-                            <ListView ItemsSource="{Binding Students}" SelectedItem="{Binding }">
+                            <ListView ItemsSource="{Binding Students}">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <ViewCell>
                                             <StackLayout>
-                                                <Label Text="{Binding FIO}"/>
-                                                <Label Text="{Binding Gender}"/>
+                                                <Label Text="{Binding FIO, StringFormat='FIO: {0}'}"/>
+                                                <Label Text="{Binding Gender, StringFormat='Gender: {0}'}"/>
                                             </StackLayout>
                                         </ViewCell>
                                     </DataTemplate>
