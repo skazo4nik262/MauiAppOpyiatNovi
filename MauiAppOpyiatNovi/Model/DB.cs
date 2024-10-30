@@ -75,6 +75,8 @@ namespace MauiAppOpyiatNovi.Model
             var localGroup = new Group(group);
             if (localGroup != null)
             {
+                foreach (var student in localGroup.Students)
+                    student.GroupId = group.Id;
                 await context.Groups.AddAsync(localGroup);
                 context.SaveChanges();
                 return true;
@@ -97,6 +99,8 @@ namespace MauiAppOpyiatNovi.Model
             var localGroup = await context.Groups.FirstOrDefaultAsync(s => s.Id == group.Id);
             if (localGroup != null)
             {
+                foreach (var student in localGroup.Students)
+                    student.GroupId = group.Id;
                 context.Entry(localGroup).CurrentValues.SetValues(group);
                 context.SaveChanges();
                 return true;

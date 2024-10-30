@@ -12,12 +12,13 @@
             <RowDefinition Height="15*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <ListView ItemsSource="{Binding Groups}" SelectedItem="{Binding SelectedGroup}" RowHeight="100">
+        <ListView ItemsSource="{Binding Groups}" SelectedItem="{Binding SelectedGroup}" RowHeight="150">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout>
                             <Label Text="{Binding Number, StringFormat='Number: {0}'}"/>
+                            <Label Text="Students"/>
                             <ListView ItemsSource="{Binding Students}">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>

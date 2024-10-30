@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local ="clr-namespace:MauiAppOpyiatNovi.ViewModel"
+             x:Class="MauiAppOpyiatNovi.View.GroupAddServicesPage"
+             Title="GroupAddServicesPage">
+    <ContentPage.BindingContext>
+        <local:GroupAddVM/>
+    </ContentPage.BindingContext>
+    <VerticalStackLayout>
+        <Label Text="Number"/>
+        <Entry Text="{Binding Group.Number}"/>
+        <Label Text="Students"/>
+        <CollectionView ItemsSource="{Binding Students}" SelectionMode="Multiple" SelectedItems="{Binding SelectedStudents}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label Text="{Binding FIO, StringFormat=FIO:{0}}"/>
+                            <Label Text="{Binding Gender, StringFormat=Gender:{0}}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

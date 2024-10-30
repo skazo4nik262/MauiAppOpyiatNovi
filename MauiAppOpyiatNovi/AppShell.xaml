@@ -24,17 +24,17 @@
             <ShellContent Title="Students"
                       ContentTemplate="{DataTemplate local:StudentsPageView}"
                       Route="StudentsPage"/>
-            <!--<ShellContent Title="Groups"
+            <ShellContent Title="Groups"
                       ContentTemplate="{DataTemplate local:GroupsPageView}"
-                      Route="GroupsPage"/>-->
+                      Route="GroupsPage"/>
         </Tab>
         <Tab Title="DatabaseAdd">
             <ShellContent Title="Student"
                       ContentTemplate="{DataTemplate local:StudentAddServicesPage}"
                       Route="StudentAddServices"/>
-            <!--<ShellContent Title="Groups"
-                      ContentTemplate="{DataTemplate local:GroupAddServicesView}"
-                      Route="GroupAddServices"/>-->
+            <ShellContent Title="Groups"
+                      ContentTemplate="{DataTemplate local:GroupAddServicesPage}"
+                      Route="GroupAddServices"/>
         </Tab>
     </FlyoutItem>
 

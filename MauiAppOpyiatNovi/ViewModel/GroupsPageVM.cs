@@ -26,10 +26,10 @@ namespace MauiAppOpyiatNovi.ViewModel
         {
             ShellNavigationQueryParameters keyValuePairs = new ShellNavigationQueryParameters();
             if (SelectedGroup == null)
-                keyValuePairs.Add("Student", new Student());
+                keyValuePairs.Add("Group", new Group());
             else
-                keyValuePairs.Add("Student", SelectedGroup);
-            await Shell.Current.GoToAsync("//StudentAddServices", keyValuePairs);
+                keyValuePairs.Add("Group", SelectedGroup);
+            await Shell.Current.GoToAsync("//GroupAddServices", keyValuePairs);
         }
         public async Task DeleteStudentMethod()
         {
@@ -48,7 +48,7 @@ namespace MauiAppOpyiatNovi.ViewModel
 
         internal void OnDisapperaing()
         {
-            SelectedStudent = null;
+            SelectedGroup = null;
         }
     }
 }
